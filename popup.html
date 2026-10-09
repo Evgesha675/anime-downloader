@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnimeLib Downloader</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container" id="app">
+
+    <div class="header">
+      <div class="brand-mark" aria-hidden="true">↓</div>
+      <div class="brand">
+        <h1>AnimeLib</h1>
+        <span>Загрузка серий</span>
+      </div>
+    </div>
+
+    <!-- РЕЖИМ 1: Аниме определено со страницы -->
+    <div id="mode-auto" class="mode" style="display:none;">
+      <div class="anime-card" id="auto-anime-card"></div>
+
+      <div class="loading" id="auto-loading">
+        <div class="spinner"></div>
+          <p>Загрузка списка серий...</p>
+      </div>
+
+      <div id="auto-content" style="display:none;">
+        <div class="select-group">
+          <label>Озвучка</label>
+          <select id="auto-dub"><option value="">Загрузка...</option></select>
+        </div>
+        <div class="select-group">
+          <label>Качество</label>
+          <select id="auto-quality"><option value="">Сначала выберите озвучку</option></select>
+        </div>
+
+        <div class="episodes-info">
+          <span>Серий: <strong id="auto-eps-total">0</strong></span>
+          <label class="range-label">
+            с <input type="number" id="auto-eps-from" min="1" value="1">
+            по <input type="number" id="auto-eps-to" min="1" value="1">
+          </label>
+        </div>
+
+        <button class="download-btn" id="auto-dl-range">Скачать выбранные</button>
+        <button class="download-all-btn" id="auto-dl-all">Скачать все серии</button>
+
+        <div class="download-status" id="auto-live"></div>
+        <div class="progress-bar-container" id="auto-progress" style="display:none;">
+          <div class="progress-bar" id="auto-bar"></div>
+          <span class="progress-text" id="auto-pct">0%</span>
+        </div>
+        <button class="cancel-btn" id="auto-cancel" style="display:none;">Отменить загрузку</button>
+        <div class="download-status" id="auto-status"></div>
+      </div>
+    </div>
+
+    <!-- РЕЖИМ 2: Ручной поиск -->
+    <div id="mode-search" class="mode" style="display:none;">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Название аниме..." autofocus>
+        <button id="search-btn">Найти</button>
+      </div>
+      <div class="search-hint">Или откройте страницу аниме на animelib.org — расширение определит его автоматически.</div>
+      <div class="search-status" id="search-status"></div>
+      <div class="results-list" id="search-results"></div>
+    </div>
+
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

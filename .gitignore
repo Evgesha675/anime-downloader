@@ -1,0 +1,6 @@
+dist-firefox/
+packages/
+*.zip
+*.pem
+*.crx
+*.xpi
