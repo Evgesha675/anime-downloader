@@ -13,7 +13,7 @@
 - фоновая очередь и отображение прогресса;
 - поддержка Chromium и Firefox 128+.
 
-## Установка для разработки
+## Установка
 
 ### Chrome, Chromium, Edge
 
@@ -24,25 +24,16 @@
 
 ### Firefox
 
-1. Запустите `build-firefox.cmd`.
-2. Откройте `about:debugging#/runtime/this-firefox`.
-3. Нажмите **Загрузить временное дополнение**.
-4. Выберите `dist-firefox/manifest.json`.
+Инструкция подходит также для Zen Browser и других браузеров на основе Firefox 128+.
+
+1. Скачайте `animelib-downloader-firefox.zip` из [последнего релиза](https://github.com/Evgesha675/anime-downloader/releases/latest).
+2. Распакуйте архив в отдельную папку.
+3. Откройте `about:debugging#/runtime/this-firefox`.
+4. Нажмите **Загрузить временное дополнение**.
+5. Выберите `manifest.json` из распакованной папки.
+6. Откройте AnimeLib, войдите в аккаунт и обновите страницу.
 
 Временное дополнение Firefox удаляется после перезапуска браузера. Для постоянной установки нужна подписанная сборка из Firefox Add-ons.
-
-## Сборка пакетов для магазинов
-
-Запустите:
-
-```powershell
-.\build-packages.cmd
-```
-
-Архивы появятся в папке `packages`:
-
-- `animelib-downloader-chrome.zip` — Chrome Web Store и Edge Add-ons;
-- `animelib-downloader-firefox.zip` — Firefox Add-ons.
 
 ## Конфиденциальность
 
